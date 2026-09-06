@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Interactive preview of REASON — intent-aware digital memory.">
+  <title>REASON — Interactive Preview</title>
+  <link rel="icon" href="./assets/favicon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="container topbar-inner">
+    <a class="identity" href="./index.html">
+      <div class="leafmark"><span>❧</span></div>
+      <div><strong>REASON / PREVIEW</strong><small>Intent-aware memory · concept demo</small></div>
+    </a>
+    <nav class="navlinks"><a href="./index.html">Overview</a><a href="#demo">Demo</a><a href="#notes">Notes</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="preview-hero">
+  <div class="container">
+    <div class="smallcaps" style="color:var(--phthalo)">interactive specimen / 001</div>
+    <h1>Remember the reason.</h1>
+    <p>Save something, let REASON suggest an intention from the surrounding context, and then search the archive using meaning instead of only names and dates.</p>
+  </div>
+</section>
+
+<section id="demo">
+  <div class="container demo-shell">
+    <form class="ledger" onsubmit="return false">
+      <div class="field"><label for="itemType">object type</label><select id="itemType"><option value="Screenshot">Screenshot</option><option value="Bookmark">Bookmark</option><option value="Document">Document</option><option value="Saved place">Saved place</option><option value="Note">Note</option></select></div>
+      <div class="field"><label for="itemTitle">what did you save?</label><input id="itemTitle" type="text" placeholder="e.g. green desk lamp"></div>
+      <div class="field"><label for="itemContext">what were you doing?</label><select id="itemContext"><option value="">Choose context…</option><option value="shopping">Comparing something before buying</option><option value="travel">Planning a place or trip</option><option value="idea">Collecting reference for an idea</option><option value="meeting">Preparing for a meeting or task</option><option value="gift">Looking for a gift</option><option value="later">Want to revisit this later</option><option value="share">Need to share it with someone</option></select></div>
+      <button class="vintage-btn" id="suggestBtn" type="button">Suggest reason</button>
+      <div class="suggestion"><div id="suggestedText">Choose a context and REASON will suggest a lightweight intention.</div><div class="chip-row" id="chipRow"></div></div>
+      <div class="field"><label for="notes">optional context note</label><textarea id="notes" placeholder="Anything your future self should know…"></textarea></div>
+      <button class="vintage-btn" id="saveBtn" type="button">Save with reason</button>
+    </form>
+
+    <div class="memory-board">
+      <div class="memory-head">
+        <div><div class="smallcaps" style="color:var(--phthalo)">personal archive</div><h2>Memory, with meaning.</h2></div>
+        <label class="search-line"><span>⌕</span><input id="searchBox" placeholder="Try: compare, idea, trip, gift…"></label>
+      </div>
+      <div class="saved-list" id="savedList"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="notes">
+  <div class="container preview-note">
+    <div><div class="smallcaps">what this proves</div><h3>A saved object can carry intention without becoming a task.</h3><p>The prototype demonstrates capture → suggestion → storage → recall, while keeping the interaction deliberately lightweight.</p></div>
+    <div><div class="smallcaps">what it does not prove yet</div><h3>Whether intention can be inferred accurately enough to feel useful.</h3><p>That is the real experiment: is a tiny layer of context more valuable than the friction required to preserve it?</p></div>
+  </div>
+</section>
+</main>
+
+<footer class="footer"><div class="container footer-inner"><span>REASON / INTERACTIVE CONCEPT</span><span>MADE BY MANIAR / CASE NOTE 001</span></div></footer>
+<script src="./app.js"></script>
+</body>
+</html>
